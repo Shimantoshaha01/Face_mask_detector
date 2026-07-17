@@ -1,23 +1,59 @@
-😷 Face Mask Detection using Convolutional Neural Networks (CNN)
+<h1 align="center">😷 Face Mask Detection using Convolutional Neural Networks (CNN)</h1>
 
-A deep learning-based face mask detection system that classifies facial images into three categories:
+<p align="center">
+A Deep Learning project that classifies facial images into three categories:
+<br><br>
 
-😷 With Mask
-❌ Without Mask
-⚠️ Incorrect Mask
+😷 <b>With Mask</b> &nbsp;&nbsp;|&nbsp;&nbsp;
+❌ <b>Without Mask</b> &nbsp;&nbsp;|&nbsp;&nbsp;
+⚠️ <b>Incorrect Mask</b>
 
-The model is built from scratch using TensorFlow/Keras and a Convolutional Neural Network (CNN). It was trained on a multi-class face mask dataset containing more than 14,000 images with varying resolutions and lighting conditions.
+</p>
 
-🚀 Features
-Three-class face mask classification
-Custom CNN architecture (built from scratch)
-Data augmentation to improve generalization
-Image preprocessing and normalization
-Automatic train/validation/test dataset splitting
-Performance visualization using accuracy and loss curves
-Predicts mask status for new images
-Model saved in TensorFlow .keras format
-📂 Dataset Structure
+<p align="center">
+
+<img src="https://img.shields.io/badge/Python-3.x-blue?logo=python">
+<img src="https://img.shields.io/badge/TensorFlow-2.x-orange?logo=tensorflow">
+<img src="https://img.shields.io/badge/Keras-Deep%20Learning-red?logo=keras">
+<img src="https://img.shields.io/badge/OpenCV-Computer%20Vision-green?logo=opencv">
+<img src="https://img.shields.io/badge/NumPy-Numerical%20Computing-blue">
+<img src="https://img.shields.io/badge/License-MIT-success">
+
+</p>
+
+---
+
+# 📌 Project Overview
+
+This project implements a **Convolutional Neural Network (CNN)** from scratch to detect whether a person is:
+
+- 😷 **With Mask**
+- ❌ **Without Mask**
+- ⚠️ **Incorrectly Wearing a Mask**
+
+The model was trained using **TensorFlow/Keras** on a face mask dataset containing **14,536 images** with varying lighting conditions, backgrounds, image resolutions, and face orientations.
+
+The project demonstrates the complete deep learning workflow including dataset preprocessing, data augmentation, CNN model development, training, evaluation, and prediction.
+
+---
+
+# 🚀 Features
+
+- ✅ Three-Class Face Mask Classification
+- ✅ Custom CNN Architecture
+- ✅ TensorFlow/Keras Implementation
+- ✅ Image Preprocessing & Normalization
+- ✅ Data Augmentation
+- ✅ Automatic Train / Validation / Test Split
+- ✅ Model Evaluation
+- ✅ Prediction on Unseen Images
+- ✅ Model Saved in `.keras` Format
+
+---
+
+# 📂 Dataset Structure
+
+```
 FMD_DATASET/
 │
 ├── with_mask/
@@ -31,22 +67,36 @@ FMD_DATASET/
 └── incorrect_mask/
     ├── mc/
     └── mmc/
+```
 
-Total Images: 14,536
+### Dataset Information
 
-Classes:
+| Property | Value |
+|----------|-------|
+| Total Images | **14,536** |
+| Classes | **3** |
+| Image Size | Resized to **224 × 224** |
+| Split | Train / Validation / Test |
 
-With Mask
-Without Mask
-Incorrect Mask
-🛠 Technologies Used
-Python
-TensorFlow / Keras
-OpenCV
-NumPy
-Matplotlib
-KaggleHub
-🧠 CNN Architecture
+---
+
+# 🛠 Technologies Used
+
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| TensorFlow | Deep Learning |
+| Keras | CNN Development |
+| OpenCV | Image Processing |
+| NumPy | Numerical Computation |
+| Matplotlib | Data Visualization |
+| KaggleHub | Dataset Download |
+
+---
+
+# 🧠 CNN Architecture
+
+```
 Input (224×224×3)
         │
 Data Augmentation
@@ -55,100 +105,163 @@ Rescaling
         │
 Conv2D (32)
         │
-MaxPooling
+BatchNormalization
+        │
+MaxPooling2D
         │
 Conv2D (64)
         │
-MaxPooling
+BatchNormalization
+        │
+MaxPooling2D
         │
 Conv2D (128)
         │
-MaxPooling
+BatchNormalization
+        │
+MaxPooling2D
         │
 Conv2D (256)
         │
-MaxPooling
+BatchNormalization
+        │
+MaxPooling2D
         │
 Flatten
         │
 Dense (256)
         │
-Dropout
+Dropout (0.5)
         │
 Dense (128)
         │
-Dropout
+Dropout (0.3)
         │
-Softmax (3 Classes)
-📊 Training Pipeline
-Dataset exploration and analysis
-Image size analysis
-Corrupted image detection
-Image resizing to 224×224
-Pixel normalization
-Data augmentation
-CNN training
-Model evaluation
-Prediction on unseen images
-📈 Model Performance
+Dense (3)
+        │
+Softmax
+```
 
-The model was trained using:
+---
 
-Optimizer: Adam
-Loss Function: Sparse Categorical Crossentropy
-Evaluation Metric: Accuracy
+# 📊 Training Pipeline
 
-Training and validation curves indicate good convergence with minimal overfitting.
+- Dataset Exploration
+- Image Analysis
+- Image Resizing
+- Pixel Normalization
+- Data Augmentation
+- CNN Training
+- Model Evaluation
+- Prediction on Test Images
+- Save Trained Model
 
-📸 Prediction
+---
 
-The trained model predicts one of the following classes:
+# 📈 Model Performance
 
-😷 With Mask
-❌ Without Mask
-⚠️ Incorrect Mask
+| Metric | Value |
+|---------|-------|
+| Optimizer | Adam |
+| Loss Function | Sparse Categorical Crossentropy |
+| Evaluation Metric | Accuracy |
+| Model Format | `.keras` |
 
-along with the prediction confidence.
+The training and validation curves indicate that the model converges well with minimal overfitting.
 
-📊 Results
-Training Accuracy & Validation Accuracy
+---
 
-This plot shows the learning progress of the CNN during training. The training and validation accuracy curves indicate that the model learns effectively while maintaining good generalization.
 
-<p align="center"> <img src="[images/accuracy_curve.png](https://github.com/Shimantoshaha01/Face_mask_detector/blob/main/accuracy_curve.png)" alt="Training Accuracy Curve" width="700"/> </p>
-Training Loss & Validation Loss
+# 📊 Results
 
-The loss curves demonstrate a consistent decrease in training loss while validation loss remains relatively low, indicating stable convergence with minimal overfitting.
+## 📈 Training Accuracy & Validation Accuracy
 
-<p align="center"> <img src="[images/loss_curve.png](https://github.com/Shimantoshaha01/Face_mask_detector/blob/main/loss_curve.png)" alt="Training Loss Curve" width="700"/> </p>
-🖼️ Sample Predictions on Test Images
+The figure below illustrates the learning progress of the CNN throughout the training process. The training and validation accuracy curves show that the model learns effectively while maintaining good generalization on unseen data.
 
-Below are sample predictions generated by the trained CNN on unseen test images. Each image displays:
+<p align="center">
+<img src="accuracy_curve.png" width="800">
+</p>
 
-Ground Truth Label
-Predicted Label
-Prediction Confidence
+---
 
-Green labels indicate correct predictions.
+## 📉 Training Loss & Validation Loss
 
-<p align="center"> <img src="[images/sample_predictions.png](https://github.com/Shimantoshaha01/Face_mask_detector/blob/main/sample_predictions.png)" alt="Sample Predictions" width="900"/> </p>
+The loss curves demonstrate a consistent decrease in training loss while the validation loss remains relatively low, indicating stable convergence and minimal overfitting.
 
-📁 Project Structure
-Face-Mask-Detector/
+<p align="center">
+<img src="loss_curve.png" width="800">
+</p>
+---
+
+## 🖼️ Sample Predictions on Test Images
+
+The following examples show predictions made by the trained CNN on unseen test images.
+
+Each prediction includes:
+
+- ✅ Ground Truth Label
+- 🤖 Predicted Label
+- 📊 Prediction Confidence
+
+Green-colored labels indicate correct predictions.
+
+<p align="center">
+<img src="sample_predictions.png" width="900">
+</p>
+
+---
+---
+
+# 📁 Project Structure
+
+```
+Face-Mask-Detection/
 │
 ├── dataset/
-├── notebooks/
+│
+├── images/
+│   ├── accuracy.png
+│   ├── loss.png
+│   ├── predictions.png
+│   └── model_summary.png
+│
 ├── models/
 │   └── face_mask_detector.keras
-├── images/
-├── README.md
-└── requirements.txt
-🎯 Future Improvements
-Real-time webcam-based mask detection
-Face detection using MediaPipe or YOLO
-Transfer learning with MobileNetV2 or EfficientNet
-TensorFlow Lite model for mobile deployment
-Web application using Flask or Streamlit
-📜 License
+│
+├── notebook.ipynb
+│
+├── requirements.txt
+│
+└── README.md
+```
 
-This project is intended for educational and research purposes.
+---
+
+# 🎯 Future Improvements
+
+- 🎥 Real-Time Webcam Detection
+- 😊 Face Detection using MediaPipe
+- 🚀 Transfer Learning (MobileNetV2 / EfficientNet)
+- 📱 TensorFlow Lite Deployment
+- 🌐 Flask / Streamlit Web Application
+- 📦 Docker Deployment
+
+---
+
+# 📜 License
+
+This project is developed for **educational and research purposes**.
+
+---
+
+# 👨‍💻 Author
+
+**Shimanto Shaha**
+
+🎓 Computer Science & Engineering (CUET)
+
+GitHub: https://github.com/Shimantoshaha01
+
+---
+
+## ⭐ If you found this project useful, please consider giving it a Star!
