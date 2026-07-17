@@ -212,27 +212,6 @@ Green-colored labels indicate correct predictions.
 ---
 ---
 
-# 📁 Project Structure
-
-```
-Face-Mask-Detection/
-│
-├── dataset/
-│
-├── images/
-│   ├── accuracy.png
-│   ├── loss.png
-│   ├── predictions.png
-│   └── model_summary.png
-│
-├── models/
-│   └── face_mask_detector.keras
-│
-├── notebook.ipynb
-│
-├── requirements.txt
-│
-└── README.md
 ```
 
 ---
@@ -256,7 +235,7 @@ This project is developed for **educational and research purposes**.
 
 # 👨‍💻 Author
 
-**Shimanto Shaha**
+**Shimanto Kumar Shaha**
 
 🎓 Computer Science & Engineering (CUET)
 
